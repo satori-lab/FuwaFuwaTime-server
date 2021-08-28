@@ -11,6 +11,8 @@ COPY . ./
 
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN curl -OL https://github.com/unitaryai/detoxify/releases/download/v0.1-alpha/toxic_multilingual-bbddc277.ckpt
+RUN mv toxic_multilingual-bbddc277.ckpt /root/.cache/torch/hub/checkpoints/
 
 EXPOSE 8000
 EXPOSE 80
